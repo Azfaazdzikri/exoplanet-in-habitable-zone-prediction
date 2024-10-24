@@ -33,10 +33,10 @@ def process_exoplanet_data(file_path):
         lambda row: calculate_luminosity(row['mag_v'], row['star_distance']), axis=1)
 
     # Menyimpan hasil ke file CSV baru
-    output_file_path = r'D:\Azfa\Kuliah\Semester 7\skripsi\ML\exoplanet-in-habitable-zone-prediction\data\processed_exoplanet_data.csv'
+    output_file_path = r'D:\Backup\Kuliah\Skripsi\Machine Learning\FilterData\data\filterdata_candidate_processed.csv'
     filtered_data.to_csv(output_file_path, index=False)
     print(f"Data has been processed and saved to {output_file_path}")
 
 # Path ke file CSV yang akan diolah
-file_path = 'D:\\Azfa\\Kuliah\\Semester 7\\skripsi\\ML\\exoplanet-in-habitable-zone-prediction\\data\\filterdata 2.csv'
+file_path = r'D:\Backup\Kuliah\Skripsi\Machine Learning\FilterData\data\filterdata_candidate.csv'
 process_exoplanet_data(file_path)

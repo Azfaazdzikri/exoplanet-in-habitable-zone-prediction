@@ -113,10 +113,10 @@ def process_exoplanet_data(file_path):
     # Convert 'harmonic_ratio' to string before writing to CSV to prevent unwanted formatting
     df['harmonic_ratio'] = df['harmonic_ratio'].astype(str)
 
-    output_file_path = r'D:\Backup\Kuliah\Skripsi\Machine Learning\FilterData\data\final_exoplanet_data.csv'
+    output_file_path = r'D:\Backup\Kuliah\Skripsi\Machine Learning\FilterData\data\final_candidate_data.csv'
     df.to_csv(output_file_path, index=False, date_format='%Y-%m-%d')
     print(f"Data has been processed and saved to {output_file_path}")
 
 # Example usage
-file_path = r'D:\Backup\Kuliah\Skripsi\Machine Learning\FilterData\data\filtered_exoplanet_data.csv'
+file_path = r'D:\Backup\Kuliah\Skripsi\Machine Learning\FilterData\data\filterdata_candidate_processed.csv'
 process_exoplanet_data(file_path)
