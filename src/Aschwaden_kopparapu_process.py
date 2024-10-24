@@ -46,7 +46,8 @@ def predict_new_exoplanets(df):
                         'star_name': star,
                         'mag_v': group['mag_v'].iloc[0],
                         'star_teff': group['star_teff'].iloc[0],
-                        'star_distance': group['star_distance'].iloc[0]
+                        'star_distance': group['star_distance'].iloc[0],
+                        'harmonic_ratio': f"{ratio[0]} banding {ratio[1]}"  # Use text description for harmonic ratio
                     }
                     new_rows.append(new_row)
                     next_letter = get_next_letter([next_letter])
@@ -109,10 +110,13 @@ def process_exoplanet_data(file_path):
 
     df = check_habitable_zone(df)
 
-    output_file_path = r'D:\Azfa\Kuliah\Semester 7\skripsi\ML\exoplanet-in-habitable-zone-prediction\data\final_exoplanet_data.csv'
-    df.to_csv(output_file_path, index=False)
+    # Convert 'harmonic_ratio' to string before writing to CSV to prevent unwanted formatting
+    df['harmonic_ratio'] = df['harmonic_ratio'].astype(str)
+
+    output_file_path = r'D:\Backup\Kuliah\Skripsi\Machine Learning\FilterData\data\final_exoplanet_data.csv'
+    df.to_csv(output_file_path, index=False, date_format='%Y-%m-%d')
     print(f"Data has been processed and saved to {output_file_path}")
 
 # Example usage
-file_path = r'D:\Azfa\Kuliah\Semester 7\skripsi\ML\exoplanet-in-habitable-zone-prediction\data\filtered_exoplanet_data.csv'
+file_path = r'D:\Backup\Kuliah\Skripsi\Machine Learning\FilterData\data\filtered_exoplanet_data.csv'
 process_exoplanet_data(file_path)
