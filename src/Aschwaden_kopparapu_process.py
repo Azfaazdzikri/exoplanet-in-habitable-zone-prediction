@@ -14,7 +14,6 @@ def get_next_letter(existing_planets):
             next_letter = chr(ord(last_letter[0]) + 1) + last_letter[1]
     else:
         next_letter = 'b'
-
     return next_letter
 
 # Function to predict new exoplanets based on harmonic ratios
@@ -24,7 +23,10 @@ def predict_new_exoplanets(df):
 
     for star, group in df.groupby('star_name'):
         periods = group['orbital_period'].dropna().sort_values().values
-        if len(periods) < 2:
+        semi_major_axes = group['semi_major_axis'].dropna().sort_values().values
+        planet_names = group['planet_name'].tolist()
+
+        if len(periods) < 2 or len(semi_major_axes) < 2:
             continue
 
         existing_planets = group['planet_name'].str.extract(r'([bcdefghijklmnopqrstuvwxyz]+)$')[0].dropna().tolist()
@@ -34,20 +36,19 @@ def predict_new_exoplanets(df):
             for ratio in harmonic_ratios:
                 predicted_period = periods[i] * ratio[0] / ratio[1]
                 if predicted_period not in periods:
-                    # Use Kepler's Third Law to estimate semi-major axis for the predicted planet
-                    star_mass = 1  # Assuming 1 solar mass, adjust if data is available
-                    predicted_semi_major_axis = (predicted_period**(2/3)) * (star_mass**(1/3))
+                    predicted_semi_major_axis = semi_major_axes[i] * (predicted_period / periods[i])**(2/3)
 
                     new_row = {
                         'planet_name': f"{star} {next_letter}",
                         'planet_status': 'Aschwaden Prediction',
+                        'referenced_planet': planet_names[i],
                         'orbital_period': predicted_period,
                         'semi_major_axis': predicted_semi_major_axis,
                         'star_name': star,
                         'mag_v': group['mag_v'].iloc[0],
                         'star_teff': group['star_teff'].iloc[0],
                         'star_distance': group['star_distance'].iloc[0],
-                        'harmonic_ratio': f"{ratio[0]} banding {ratio[1]}"  # Use text description for harmonic ratio
+                        'harmonic_ratio': f"{ratio[0]} banding {ratio[1]}"
                     }
                     new_rows.append(new_row)
                     next_letter = get_next_letter([next_letter])
@@ -77,8 +78,15 @@ def calculate_hz_boundaries(star_teff):
 
     return boundaries
 
-# Function to check if exoplanet is in habitable zone
+# Function to check if exoplanet is in habitable zone and calculate distance and boundaries
 def check_habitable_zone(df):
+    # Initialize new columns
+    df['habitable_zone_status'] = ''
+    df['HZ_distance_recent_venus'] = np.nan
+    df['HZ_distance_runaway_greenhouse'] = np.nan
+    df['HZ_distance_maximum_greenhouse'] = np.nan
+    df['HZ_distance_early_mars'] = np.nan
+
     for index, row in df.iterrows():
         if pd.isna(row['semi_major_axis']) or pd.isna(row['star_teff']):
             continue
@@ -88,6 +96,21 @@ def check_habitable_zone(df):
 
         boundaries = calculate_hz_boundaries(star_teff)
 
+        # Calculate habitable zone distances for each boundary
+        habitable_zone_distances = {
+            'recentVenus': (row['mag_v'] * boundaries['recentVenus']) ** 0.5,
+            'runawayGreenhouse': (row['mag_v'] * boundaries['runawayGreenhouse']) ** 0.5,
+            'maximumGreenhouse': (row['mag_v'] * boundaries['maximumGreenhouse']) ** 0.5,
+            'earlyMars': (row['mag_v'] * boundaries['earlyMars']) ** 0.5
+        }
+
+        # Ensure to take the real part of the result
+        df.at[index, 'HZ_distance_recent_venus'] = habitable_zone_distances['recentVenus'].real
+        df.at[index, 'HZ_distance_runaway_greenhouse'] = habitable_zone_distances['runawayGreenhouse'].real
+        df.at[index, 'HZ_distance_maximum_greenhouse'] = habitable_zone_distances['maximumGreenhouse'].real
+        df.at[index, 'HZ_distance_early_mars'] = habitable_zone_distances['earlyMars'].real
+
+        # Determine the habitable zone status
         if semi_major_axis < boundaries['earlyMars']:
             hz_status = "Not in HZ"
         elif boundaries['earlyMars'] <= semi_major_axis <= boundaries['maximumGreenhouse']:
@@ -113,10 +136,10 @@ def process_exoplanet_data(file_path):
     # Convert 'harmonic_ratio' to string before writing to CSV to prevent unwanted formatting
     df['harmonic_ratio'] = df['harmonic_ratio'].astype(str)
 
-    output_file_path = r'D:\Backup\Kuliah\Skripsi\Machine Learning\FilterData\data\final_candidate_data.csv'
+    output_file_path = r'D:\Azfa\Kuliah\Semester 7\skripsi\ML\exoplanet-in-habitable-zone-prediction\data\final_candidate_data.csv'
     df.to_csv(output_file_path, index=False, date_format='%Y-%m-%d')
     print(f"Data has been processed and saved to {output_file_path}")
 
 # Example usage
-file_path = r'D:\Backup\Kuliah\Skripsi\Machine Learning\FilterData\data\filterdata_candidate_processed.csv'
+file_path = r'D:\Azfa\Kuliah\Semester 7\skripsi\ML\exoplanet-in-habitable-zone-prediction\data\filterdata_candidate_processed.csv'
 process_exoplanet_data(file_path)
