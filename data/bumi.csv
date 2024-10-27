@@ -1,0 +1,9 @@
+planet_name,planet_status,orbital_period,semi_major_axis,star_name,mag_v,star_teff,star_distance
+sun b,Confirmed,88,0.3870993,sun,4.83,5780,0.000004848
+sun c,Confirmed,225,0.723336,sun,4.83,5780,0.000004848
+sun d,Confirmed,365,1.000003,sun,4.83,5780,0.000004848
+sun e,Confirmed,687,1.52371,sun,4.83,5780,0.000004848
+sun f,Confirmed,4333,5.2029,sun,4.83,5780,0.000004848
+sun g,Confirmed,10759,9.537,sun,4.83,5780,0.000004848
+sun h,Confirmed,30687,19.189,sun,4.83,5780,0.000004848
+sun i,Confirmed,60190,30.0699,sun,4.83,5780,0.000004848

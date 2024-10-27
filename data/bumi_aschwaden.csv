@@ -1,0 +1,58 @@
+planet_name,planet_status,orbital_period,semi_major_axis,star_name,mag_v,star_teff,star_distance,referenced_planet,harmonic_ratio,luminosity
+sun b,Confirmed,88.0,0.3870993,sun,4.83,5780,4.848e-06,,,1.0
+sun c,Confirmed,225.0,0.723336,sun,4.83,5780,4.848e-06,,,1.0
+sun d,Confirmed,365.0,1.000003,sun,4.83,5780,4.848e-06,,,1.0
+sun e,Confirmed,687.0,1.52371,sun,4.83,5780,4.848e-06,,,1.0
+sun f,Confirmed,4333.0,5.2029,sun,4.83,5780,4.848e-06,,,1.0
+sun g,Confirmed,10759.0,9.537,sun,4.83,5780,4.848e-06,,,1.0
+sun h,Confirmed,30687.0,19.189,sun,4.83,5780,4.848e-06,,,1.0
+sun i,Confirmed,60190.0,30.0699,sun,4.83,5780,4.848e-06,,,1.0
+sun j,Aschwaden Prediction,176.0,0.6144818360361536,sun,4.83,5780,4.848e-06,sun b,2 to 1,1.0
+sun b,Aschwaden Prediction,132.0,0.507243579589644,sun,4.83,5780,4.848e-06,sun b,3 to 2,1.0
+sun c,Aschwaden Prediction,146.66666666666666,0.5441536572257356,sun,4.83,5780,4.848e-06,sun b,5 to 3,1.0
+sun b,Aschwaden Prediction,110.0,0.4491889470948308,sun,4.83,5780,4.848e-06,sun b,5 to 4,1.0
+sun c,Aschwaden Prediction,117.33333333333333,0.4689374063339375,sun,4.83,5780,4.848e-06,sun b,4 to 3,1.0
+sun b,Aschwaden Prediction,220.0,0.7130430071508223,sun,4.83,5780,4.848e-06,sun b,5 to 2,1.0
+sun c,Aschwaden Prediction,264.0,0.8051989918447159,sun,4.83,5780,4.848e-06,sun b,3 to 1,1.0
+sun b,Aschwaden Prediction,450.0,1.1482243273264694,sun,4.83,5780,4.848e-06,sun c,2 to 1,1.0
+sun c,Aschwaden Prediction,337.5,0.9478382985607431,sun,4.83,5780,4.848e-06,sun c,3 to 2,1.0
+sun b,Aschwaden Prediction,375.0,1.0168086839811767,sun,4.83,5780,4.848e-06,sun c,5 to 3,1.0
+sun c,Aschwaden Prediction,281.25,0.8393570751375333,sun,4.83,5780,4.848e-06,sun c,5 to 4,1.0
+sun b,Aschwaden Prediction,300.0,0.8762591607578857,sun,4.83,5780,4.848e-06,sun c,4 to 3,1.0
+sun c,Aschwaden Prediction,562.5,1.3323963040502713,sun,4.83,5780,4.848e-06,sun c,5 to 2,1.0
+sun b,Aschwaden Prediction,675.0,1.504599512231072,sun,4.83,5780,4.848e-06,sun c,3 to 1,1.0
+sun c,Aschwaden Prediction,730.0,1.5874058141713552,sun,4.83,5780,4.848e-06,sun d,2 to 1,1.0
+sun b,Aschwaden Prediction,547.5,1.3103746282165394,sun,4.83,5780,4.848e-06,sun d,3 to 2,1.0
+sun c,Aschwaden Prediction,608.3333333333334,1.4057253259995752,sun,4.83,5780,4.848e-06,sun d,5 to 3,1.0
+sun b,Aschwaden Prediction,456.25,1.16040068959482,sun,4.83,5780,4.848e-06,sun d,5 to 4,1.0
+sun c,Aschwaden Prediction,486.6666666666667,1.2114173627959455,sun,4.83,5780,4.848e-06,sun d,4 to 3,1.0
+sun b,Aschwaden Prediction,912.5,1.8420212753674412,sun,4.83,5780,4.848e-06,sun d,5 to 2,1.0
+sun c,Aschwaden Prediction,1095.0,2.080090063303373,sun,4.83,5780,4.848e-06,sun d,3 to 1,1.0
+sun b,Aschwaden Prediction,1374.0,2.418738856894465,sun,4.83,5780,4.848e-06,sun e,2 to 1,1.0
+sun c,Aschwaden Prediction,1030.5,1.9966249348850187,sun,4.83,5780,4.848e-06,sun e,3 to 2,1.0
+sun b,Aschwaden Prediction,1145.0,2.1419113107448804,sun,4.83,5780,4.848e-06,sun e,5 to 3,1.0
+sun c,Aschwaden Prediction,858.75,1.768108830416032,sun,4.83,5780,4.848e-06,sun e,5 to 4,1.0
+sun b,Aschwaden Prediction,916.0,1.8458432123361728,sun,4.83,5780,4.848e-06,sun e,4 to 3,1.0
+sun c,Aschwaden Prediction,1717.5,2.8066978173966715,sun,4.83,5780,4.848e-06,sun e,5 to 2,1.0
+sun b,Aschwaden Prediction,2061.0,3.1694445220224168,sun,4.83,5780,4.848e-06,sun e,3 to 1,1.0
+sun c,Aschwaden Prediction,8666.0,8.259088933285344,sun,4.83,5780,4.848e-06,sun f,2 to 1,1.0
+sun b,Aschwaden Prediction,6499.5,6.817727699964733,sun,4.83,5780,4.848e-06,sun f,3 to 2,1.0
+sun c,Aschwaden Prediction,7221.666666666667,7.3138263571641176,sun,4.83,5780,4.848e-06,sun f,5 to 3,1.0
+sun b,Aschwaden Prediction,5416.25,6.037430635600982,sun,4.83,5780,4.848e-06,sun f,5 to 4,1.0
+sun c,Aschwaden Prediction,5777.333333333333,6.302864488297558,sun,4.83,5780,4.848e-06,sun f,4 to 3,1.0
+sun b,Aschwaden Prediction,10832.5,9.583823742138032,sun,4.83,5780,4.848e-06,sun f,5 to 2,1.0
+sun c,Aschwaden Prediction,12999.0,10.822468122956751,sun,4.83,5780,4.848e-06,sun f,3 to 1,1.0
+sun b,Aschwaden Prediction,21518.0,15.139043832620718,sun,4.83,5780,4.848e-06,sun g,2 to 1,1.0
+sun c,Aschwaden Prediction,16138.5,12.497005338285124,sun,4.83,5780,4.848e-06,sun g,3 to 2,1.0
+sun b,Aschwaden Prediction,17931.666666666668,13.406362214971304,sun,4.83,5780,4.848e-06,sun g,5 to 3,1.0
+sun c,Aschwaden Prediction,13448.75,11.06670817654127,sun,4.83,5780,4.848e-06,sun g,5 to 4,1.0
+sun b,Aschwaden Prediction,14345.333333333334,11.553252729226747,sun,4.83,5780,4.848e-06,sun g,4 to 3,1.0
+sun c,Aschwaden Prediction,26897.5,17.567304201266683,sun,4.83,5780,4.848e-06,sun g,5 to 2,1.0
+sun b,Aschwaden Prediction,32277.0,19.837759420446012,sun,4.83,5780,4.848e-06,sun g,3 to 1,1.0
+sun c,Aschwaden Prediction,61374.0,30.46063878621778,sun,4.83,5780,4.848e-06,sun h,2 to 1,1.0
+sun b,Aschwaden Prediction,46030.5,25.144703306737256,sun,4.83,5780,4.848e-06,sun h,3 to 2,1.0
+sun c,Aschwaden Prediction,51145.0,26.974382357458776,sun,4.83,5780,4.848e-06,sun h,5 to 3,1.0
+sun b,Aschwaden Prediction,38358.75,22.266862032048905,sun,4.83,5780,4.848e-06,sun h,5 to 4,1.0
+sun c,Aschwaden Prediction,40916.0,23.245818037237285,sun,4.83,5780,4.848e-06,sun h,4 to 3,1.0
+sun b,Aschwaden Prediction,76717.5,35.346440213705186,sun,4.83,5780,4.848e-06,sun h,5 to 2,1.0
+sun c,Aschwaden Prediction,92061.0,39.91472848054299,sun,4.83,5780,4.848e-06,sun h,3 to 1,1.0
